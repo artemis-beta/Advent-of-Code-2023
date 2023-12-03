@@ -1,7 +1,7 @@
 # Advent of Code 2023
 
 This repository contains solutions to the challenges set as part of the [Advent of Code 2023](https://adventofcode.com/2023).
-The solutions have been created in the Rust programming language.
+The solutions have been created in the Rust programming language as a library.
 
 | | ||||||
 |-|-|-|-|-|-|-|
@@ -13,3 +13,19 @@ The solutions have been created in the Rust programming language.
 | | | | | | | |
 |21|22|23|24|25| | |
 | | | | | | | |
+
+## Exercises
+
+The tasks for each day can be found within the `examples` directory and make use of the `aoc23` library:
+
+```sh
+cargo run --example day_3
+```
+
+## Testing
+
+Tests are based on the examples given within the exercises themselves.
+
+```sh
+cargo test
+```
