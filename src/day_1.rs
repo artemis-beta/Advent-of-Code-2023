@@ -165,7 +165,6 @@ pub fn calibrate_from_data(calibration_file: &String, allow_str_nums: bool) -> R
         if allow_str_nums {
             match number_words_in_line(&file_line) {
                 Some(n) => {
-                    log::debug!("{} > {}", last_num_index, n.1.0);
                     first_num = if first_num_index < n.0.0 {first_num.to_string()} else {n.0.1.to_string()};
                     last_num = if last_num_index > n.1.0 {last_num.to_string()} else {n.1.1.to_string()};
                 },
@@ -195,7 +194,7 @@ mod test {
     fn test_calibration_no_words() -> () {
         match simple_logger::init_with_env() {
         Ok(l) => l,
-        Err(e) => ()
+        Err(_) => ()
         };
         
         let mut test_file = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
@@ -207,7 +206,7 @@ mod test {
     fn test_overlapped_words_and_repeat() {
         match simple_logger::init_with_env() {
             Ok(l) => l,
-            Err(e) => ()
+            Err(_) => ()
         };
             
         let mut test_file = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
@@ -219,7 +218,7 @@ mod test {
     fn test_calibration_words() {
         match simple_logger::init_with_env() {
             Ok(l) => l,
-            Err(e) => ()
+            Err(_) => ()
         };
         
         let mut test_file = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
@@ -231,7 +230,7 @@ mod test {
     fn test_day_1_part_1() {
         match simple_logger::init_with_env() {
             Ok(l) => l,
-            Err(e) => ()
+            Err(_) => ()
         };
         
         let mut test_file = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
