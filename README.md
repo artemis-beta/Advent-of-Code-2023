@@ -1,4 +1,5 @@
 # Advent of Code 2023
+[![Advent of Code 2023](https://github.com/artemis-beta/Advent-of-Code-2023/actions/workflows/testing.yaml/badge.svg)](https://github.com/artemis-beta/Advent-of-Code-2023/actions/workflows/testing.yaml)
 
 This repository contains solutions to the challenges set as part of the [Advent of Code 2023](https://adventofcode.com/2023).
 The solutions have been created in the Rust programming language.
