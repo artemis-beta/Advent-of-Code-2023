@@ -6,7 +6,7 @@ fn main() -> () {
     simple_logger::init_with_env().unwrap();
         
     let mut data_file = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
-    data_file.push("data/day_1/day_1.dat");
+    data_file.push("data/day_1.dat");
 
     let file_name = match data_file.to_str() {
         Some(f) => f.to_string(),

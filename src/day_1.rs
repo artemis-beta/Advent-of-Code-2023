@@ -225,16 +225,4 @@ mod test {
         test_file.push("data/test/day_1_2.dat");
         assert_eq!(calibrate_from_data(&test_file.to_str().unwrap().to_string(), true).unwrap(), 281);
     }
-
-    #[test]
-    fn test_day_1_part_1() {
-        match simple_logger::init_with_env() {
-            Ok(l) => l,
-            Err(_) => ()
-        };
-        
-        let mut test_file = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
-        test_file.push("data/day_1/day_1.dat");
-        assert_eq!(calibrate_from_data(&test_file.to_str().unwrap().to_string(), false).unwrap(), 54877);
-    }
 }
