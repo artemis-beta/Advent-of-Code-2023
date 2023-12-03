@@ -347,7 +347,7 @@ mod test {
         };
             
         let mut test_file = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
-        test_file.push("data/test/day_2_1.dat");
+        test_file.push("data/test/day_2.dat");
         assert_eq!(get_total_of_permitted_game_ids(&test_file.to_str().unwrap().to_string(), &cubes).unwrap(), 8);
     }
 }
