@@ -193,8 +193,8 @@ mod test {
     #[test]
     fn test_calibration_no_words() -> () {
         match simple_logger::init_with_env() {
-        Ok(l) => l,
-        Err(_) => ()
+            Ok(l) => l,
+            Err(_) => ()
         };
         
         let mut test_file = PathBuf::from(env!("CARGO_MANIFEST_DIR"));

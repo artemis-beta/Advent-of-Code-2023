@@ -1,5 +1,4 @@
 use std::path::PathBuf;
-use std::collections::HashMap;
 use log;
 use simple_logger;
 
@@ -14,12 +13,19 @@ fn main() -> () {
         None => panic!("{}", "Failed to create file path")
     };
 
-    let scorer = |total, _| return if total < 1 {1} else {total * 2};
+    let scorer_pt1 = |total, _| return if total < 1 {1} else {total * 2};
+    let scorer_pt2 = |total, _| return total + 1;
 
-    let total_score = match aoc23::day_4::get_total_gamecards_score(&file_name, scorer) {
+    let total_score = match aoc23::day_4::get_total_gamecards_score(&file_name, &scorer_pt1) {
+        Ok(t) => t,
+        Err(e) => panic!("{}", e)
+    };
+
+    let total_cards_won = match aoc23::day_4::get_total_cards_won(&file_name, &scorer_pt2) {
         Ok(t) => t,
         Err(e) => panic!("{}", e)
     };
 
     log::info!("For the set of game cards given in '{}', the total score using doubling is {}", file_name, total_score);
+    log::info!("Following the game rules, the total number of scratch cards won during the session is {}", total_cards_won);
 }
